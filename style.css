@@ -1,0 +1,654 @@
+/**
+ * Modern SaaS Academic Theme & Multi-Palette Customization Engine
+ * Project: Student Feedback and Course Evaluation System
+ */
+
+/* =============================================================
+ * 1. THEME DEFINITIONS & CSS CUSTOM PROPERTIES
+ * ============================================================= */
+
+/* Theme 1: Ocean Blue (Default) */
+:root,
+[data-theme="ocean-blue"] {
+  --theme-primary: #0a2240;
+  --theme-primary-hover: #07172b;
+  --theme-primary-gradient: linear-gradient(135deg, #0a2240 0%, #1a4a82 100%);
+  --theme-secondary: #1a4a82;
+  --theme-secondary-hover: #133966;
+  --theme-accent: #0284c7;
+  --theme-accent-subtle: #e0f2fe;
+  --theme-bg: #f4f7fb;
+  --theme-card-bg: #ffffff;
+  --theme-card-border: #e2e8f0;
+  --theme-text-primary: #0f172a;
+  --theme-text-secondary: #64748b;
+  --theme-navbar-bg: linear-gradient(135deg, #0a2240 0%, #163d6f 100%);
+  --theme-sidebar-bg: #0d284c;
+  --theme-sidebar-text: #cbd5e1;
+  --theme-sidebar-active: #38bdf8;
+  --theme-input-bg: #ffffff;
+  --theme-input-border: #cbd5e1;
+  color-scheme: light;
+}
+
+/* Theme 2: Dark Mode (Comfortable High-Contrast Dark) */
+[data-theme="dark-mode"] {
+  --theme-primary: #3b82f6;
+  --theme-primary-hover: #2563eb;
+  --theme-primary-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --theme-secondary: #60a5fa;
+  --theme-secondary-hover: #3b82f6;
+  --theme-accent: #38bdf8;
+  --theme-accent-subtle: rgba(56, 189, 248, 0.15);
+  --theme-bg: #0f172a;
+  --theme-card-bg: #1e293b;
+  --theme-card-border: #334155;
+  --theme-text-primary: #f8fafc;
+  --theme-text-secondary: #94a3b8;
+  --theme-navbar-bg: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  --theme-sidebar-bg: #090d16;
+  --theme-sidebar-text: #cbd5e1;
+  --theme-sidebar-active: #60a5fa;
+  --theme-input-bg: #0f172a;
+  --theme-input-border: #475569;
+  color-scheme: dark;
+}
+
+/* Theme 3: Emerald Green (Academic Nature & Fresh) */
+[data-theme="emerald-green"] {
+  --theme-primary: #065f46;
+  --theme-primary-hover: #044e39;
+  --theme-primary-gradient: linear-gradient(135deg, #064e3b 0%, #059669 100%);
+  --theme-secondary: #059669;
+  --theme-secondary-hover: #047857;
+  --theme-accent: #10b981;
+  --theme-accent-subtle: #d1fae5;
+  --theme-bg: #f0fdf4;
+  --theme-card-bg: #ffffff;
+  --theme-card-border: #dcfce7;
+  --theme-text-primary: #064e3b;
+  --theme-text-secondary: #4b5563;
+  --theme-navbar-bg: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+  --theme-sidebar-bg: #064e3b;
+  --theme-sidebar-text: #d1fae5;
+  --theme-sidebar-active: #34d399;
+  --theme-input-bg: #ffffff;
+  --theme-input-border: #a7f3d0;
+  color-scheme: light;
+}
+
+/* Theme 4: Purple Modern (Creative & Clean SaaS) */
+[data-theme="purple-modern"] {
+  --theme-primary: #5b21b6;
+  --theme-primary-hover: #4c1d95;
+  --theme-primary-gradient: linear-gradient(135deg, #4c1d95 0%, #7c3aed 100%);
+  --theme-secondary: #7c3aed;
+  --theme-secondary-hover: #6d28d9;
+  --theme-accent: #8b5cf6;
+  --theme-accent-subtle: #f3e8ff;
+  --theme-bg: #faf5ff;
+  --theme-card-bg: #ffffff;
+  --theme-card-border: #ede9fe;
+  --theme-text-primary: #2e1065;
+  --theme-text-secondary: #6b7280;
+  --theme-navbar-bg: linear-gradient(135deg, #4c1d95 0%, #6d28d9 100%);
+  --theme-sidebar-bg: #3b0764;
+  --theme-sidebar-text: #e9d5ff;
+  --theme-sidebar-active: #c084fc;
+  --theme-input-bg: #ffffff;
+  --theme-input-border: #ddd6fe;
+  color-scheme: light;
+}
+
+/* Theme 5: Rose Pink (Warm & Elegant SaaS) */
+[data-theme="rose-pink"] {
+  --theme-primary: #9f1239;
+  --theme-primary-hover: #881337;
+  --theme-primary-gradient: linear-gradient(135deg, #881337 0%, #e11d48 100%);
+  --theme-secondary: #e11d48;
+  --theme-secondary-hover: #be123c;
+  --theme-accent: #f43f5e;
+  --theme-accent-subtle: #ffe4e6;
+  --theme-bg: #fff1f2;
+  --theme-card-bg: #ffffff;
+  --theme-card-border: #fecdd3;
+  --theme-text-primary: #4c0519;
+  --theme-text-secondary: #64748b;
+  --theme-navbar-bg: linear-gradient(135deg, #881337 0%, #be123c 100%);
+  --theme-sidebar-bg: #4c0519;
+  --theme-sidebar-text: #fecdd3;
+  --theme-sidebar-active: #fb7185;
+  --theme-input-bg: #ffffff;
+  --theme-input-border: #fecdd3;
+  color-scheme: light;
+}
+
+/* Theme 6: Midnight (Deep Space Navy with Cyan Accents) */
+[data-theme="midnight"] {
+  --theme-primary: #0284c7;
+  --theme-primary-hover: #0369a1;
+  --theme-primary-gradient: linear-gradient(135deg, #030712 0%, #0f172a 100%);
+  --theme-secondary: #38bdf8;
+  --theme-secondary-hover: #0284c7;
+  --theme-accent: #38bdf8;
+  --theme-accent-subtle: rgba(56, 189, 248, 0.15);
+  --theme-bg: #030712;
+  --theme-card-bg: #0b1329;
+  --theme-card-border: #1e293b;
+  --theme-text-primary: #f3f4f6;
+  --theme-text-secondary: #9ca3af;
+  --theme-navbar-bg: linear-gradient(135deg, #030712 0%, #0b1329 100%);
+  --theme-sidebar-bg: #020617;
+  --theme-sidebar-text: #94a3b8;
+  --theme-sidebar-active: #38bdf8;
+  --theme-input-bg: #030712;
+  --theme-input-border: #1e293b;
+  color-scheme: dark;
+}
+
+/* Backward-Compatible Dynamic Mappings */
+:root {
+  --navy-dark: var(--theme-primary);
+  --navy-primary: var(--theme-secondary);
+  --navy-light: var(--theme-accent);
+  --blue-accent: var(--theme-accent);
+  --blue-subtle: var(--theme-accent-subtle);
+  --bg-light: var(--theme-bg);
+  --text-dark: var(--theme-text-primary);
+  --text-muted: var(--theme-text-secondary);
+  --star-gold: #f59e0b;
+  --star-empty: #cbd5e1;
+  --card-radius: 12px;
+  --transition-fast: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* =============================================================
+ * 2. BASE STYLING & SAAS TYPOGRAPHY
+ * ============================================================= */
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--theme-primary);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  transition: color 0.25s ease;
+}
+
+.text-navy {
+  color: var(--theme-primary) !important;
+}
+
+.bg-navy {
+  background-color: var(--theme-primary) !important;
+}
+
+.bg-navy-gradient {
+  background: var(--theme-primary-gradient) !important;
+}
+
+/* =============================================================
+ * 3. NAVBAR STYLING
+ * ============================================================= */
+.navbar-custom {
+  background: var(--theme-navbar-bg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  padding: 0.85rem 1.25rem;
+  transition: background 0.3s ease;
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+}
+
+.navbar-custom .nav-link {
+  color: #e2e8f0;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =============================================================
+ * 4. BUTTONS & FORM CONTROLS
+ * ============================================================= */
+.btn-navy {
+  background-color: var(--theme-primary);
+  border-color: var(--theme-primary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.btn-navy:hover {
+  background-color: var(--theme-primary-hover);
+  border-color: var(--theme-primary-hover);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1.5px solid var(--theme-input-border);
+  background-color: var(--theme-input-bg);
+  color: var(--theme-text-primary);
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--theme-accent);
+  box-shadow: 0 0 0 0.25rem var(--theme-accent-subtle);
+  background-color: var(--theme-input-bg);
+  color: var(--theme-text-primary);
+}
+
+/* =============================================================
+ * 5. CARDS & WIDGETS
+ * ============================================================= */
+.card-custom {
+  background: var(--theme-card-bg);
+  border: 1px solid var(--theme-card-border);
+  border-radius: var(--card-radius);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.25s ease;
+}
+
+.card-custom:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card-stat {
+  border-radius: var(--card-radius);
+  background: var(--theme-card-bg);
+  border: 1px solid var(--theme-card-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.card-stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.6rem;
+}
+
+/* =============================================================
+ * 6. 5-STAR RATING COMPONENT
+ * ============================================================= */
+.star-rating-group {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.star-rating-group input {
+  display: none;
+}
+
+.star-rating-group label {
+  color: var(--star-empty);
+  font-size: 1.85rem;
+  cursor: pointer;
+  transition: color 0.15s ease, transform 0.15s ease;
+  line-height: 1;
+}
+
+.star-rating-group label:hover,
+.star-rating-group label:hover ~ label,
+.star-rating-group input:checked ~ label {
+  color: var(--star-gold);
+}
+
+.star-rating-group label:active {
+  transform: scale(1.2);
+}
+
+.rating-badge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 50px;
+}
+
+/* =============================================================
+ * 7. ADMIN SIDEBAR & LAYOUT
+ * ============================================================= */
+.admin-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+}
+
+.admin-sidebar {
+  width: 260px;
+  background: var(--theme-sidebar-bg);
+  color: var(--theme-sidebar-text);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.admin-sidebar .sidebar-header {
+  padding: 1.5rem 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar .nav-link {
+  color: var(--theme-sidebar-text);
+  padding: 0.8rem 1.25rem;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: var(--transition-fast);
+}
+
+.admin-sidebar .nav-link i {
+  font-size: 1.2rem;
+  margin-right: 0.85rem;
+  width: 24px;
+  text-align: center;
+}
+
+.admin-sidebar .nav-link:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-left-color: var(--theme-accent);
+}
+
+.admin-sidebar .nav-link.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left-color: var(--theme-sidebar-active);
+  font-weight: 600;
+}
+
+.admin-content {
+  flex-grow: 1;
+  padding: 2rem 2.25rem;
+  overflow-y: auto;
+  background-color: var(--theme-bg);
+  transition: background-color 0.25s ease;
+}
+
+@media (max-width: 991.98px) {
+  .admin-wrapper {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+  }
+}
+
+/* =============================================================
+ * 8. TABLES & LISTINGS
+ * ============================================================= */
+.table-custom {
+  background: var(--theme-card-bg);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--theme-card-border);
+}
+
+.table-custom thead th {
+  background-color: var(--theme-primary);
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  padding: 0.9rem 1rem;
+  border: none;
+}
+
+.table-custom tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+.table-custom tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* =============================================================
+ * 9. THEME SWITCHER DROPDOWN & SWATCHES
+ * ============================================================= */
+.theme-dropdown-menu {
+  width: 320px;
+  border-radius: 14px;
+  border: 1px solid var(--theme-card-border);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  background: var(--theme-card-bg);
+  color: var(--theme-text-primary);
+}
+
+.theme-option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--theme-text-primary);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-bottom: 3px;
+}
+
+.theme-option-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.theme-option-btn.active {
+  background: var(--theme-accent-subtle);
+  color: var(--theme-primary);
+  border-color: var(--theme-accent);
+  font-weight: 600;
+}
+
+.theme-swatch-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.theme-swatch-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+/* Custom Color Studio Box */
+.custom-color-studio {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.color-input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.color-input-row label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.color-input-row input[type="color"] {
+  border: none;
+  width: 34px;
+  height: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+}
+
+/* =============================================================
+ * 10. DARK THEME OVERRIDES (Dark Mode & Midnight)
+ * ============================================================= */
+[data-theme="dark-mode"] .bg-white,
+[data-theme="midnight"] .bg-white {
+  background-color: var(--theme-card-bg) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+[data-theme="dark-mode"] .bg-light,
+[data-theme="midnight"] .bg-light {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+[data-theme="dark-mode"] .text-dark,
+[data-theme="midnight"] .text-dark {
+  color: var(--theme-text-primary) !important;
+}
+
+[data-theme="dark-mode"] .text-muted,
+[data-theme="midnight"] .text-muted {
+  color: var(--theme-text-secondary) !important;
+}
+
+[data-theme="dark-mode"] .card,
+[data-theme="midnight"] .card {
+  background-color: var(--theme-card-bg);
+  border-color: var(--theme-card-border);
+}
+
+[data-theme="dark-mode"] .table,
+[data-theme="midnight"] .table {
+  color: var(--theme-text-primary);
+  border-color: var(--theme-card-border);
+}
+
+[data-theme="dark-mode"] .table-light,
+[data-theme="midnight"] .table-light {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: var(--theme-text-primary) !important;
+}
+
+[data-theme="dark-mode"] .table-hover tbody tr:hover,
+[data-theme="midnight"] .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark-mode"] .modal-content,
+[data-theme="midnight"] .modal-content {
+  background-color: var(--theme-card-bg);
+  color: var(--theme-text-primary);
+  border-color: var(--theme-card-border);
+}
+
+[data-theme="dark-mode"] .dropdown-menu,
+[data-theme="midnight"] .dropdown-menu {
+  background-color: var(--theme-card-bg);
+  border-color: var(--theme-card-border);
+  color: var(--theme-text-primary);
+}
+
+[data-theme="dark-mode"] .dropdown-item,
+[data-theme="midnight"] .dropdown-item {
+  color: var(--theme-text-primary);
+}
+
+[data-theme="dark-mode"] .dropdown-item:hover,
+[data-theme="midnight"] .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark-mode"] .theme-option-btn:hover,
+[data-theme="midnight"] .theme-option-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark-mode"] footer,
+[data-theme="midnight"] footer {
+  background-color: var(--theme-card-bg) !important;
+  border-color: var(--theme-card-border) !important;
+}
+
+/* =============================================================
+ * 11. PRINT STYLING
+ * ============================================================= */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .navbar-custom,
+  .admin-sidebar,
+  .btn,
+  .no-print,
+  #campusChatbotTrigger,
+  #campusChatbotWindow,
+  footer {
+    display: none !important;
+  }
+  .admin-wrapper {
+    display: block !important;
+  }
+  .admin-content {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  .card-custom, .table-custom {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+  .table-custom thead th {
+    background-color: #f1f5f9 !important;
+    color: #000000 !important;
+  }
+}
